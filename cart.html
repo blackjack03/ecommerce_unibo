@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrello</title>
+    <script src="js/session_checker.js"></script>
+    <script src="libs/toastr_vanilla.js"></script>
+    <script src="libs/sweet_alert_2.js"></script>
+    <script src="js/js_utils.js"></script>
+    <script src="js/cart.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <script src="libs/font_awesome.js"></script>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.1/css/all.css" />
+    <!-- Other CSS -->
+    <link rel="stylesheet" href="libs/toastr.css" />
+    <link rel="stylesheet" href="css/glob_style.css" />
+    <link rel="stylesheet" href="css/cart.css" />
+</head>
+<body>
+    <!-- Barra di navigazione -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Unibo Store</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about_us.html">Chi siamo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contatti</a>
+                    </li>
+                    <li class="nav-item" id="accountBtn">
+                        <a class="nav-link" href="account.html">Account</a>
+                    </li>
+                    <li class="nav-item" id="loginBtn">
+                        <a class="nav-link" href="login.html">LOGIN</a>
+                    </li>
+                    <li class="nav-item" id="signupBtn">
+                        <a class="nav-link" href="signup.html">SIGNUP</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item bell">
+                        <a class="nav-link" href="notifies.html" title="Notifiche"><div class="iconsNavContainer"><i class="fa-solid fa-bell"></i><p id="notifynum"></p></div></a>
+                    </li>
+                    <li class="nav-item cart">
+                        <a class="nav-link" href="cart.html" title="Carrello"><div class="iconsNavContainer"><i class="fa-solid fa-cart-shopping"></i><p id="cartnum"></p></div></a>
+                    </li>
+                    <li class="nav-item" id="adminLoginBtn">
+                        <a class="nav-link" href="admin_login.html">LOGIN VENDITORE</a>
+                    </li>
+                    <li class="nav-item" id="logoutBtn">
+                        <a class="nav-link" href="server/logout.php">LOGOUT</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <h1>CARRELLO</h1>
+    </header>
+
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Prodotto</th>
+                    <th>Prezzo</th>
+                    <th>Quantità</th>
+                    <th>Rimuovi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="emptyrow">
+                    <td>Il tuo carrello è vuoto!</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Prezzo totale:</td>
+                    <td id="total">- €</td>
+                </tr>
+            </tfoot>
+        </table>
+        <br/>
+        <fieldset class="border p-2">
+            <legend class="float-none w-auto">Metodo di Pagamento</legend>
+            <input type="radio" name="payment_type" id="contrassegno" checked /> <label for="contrassegno">Contrassegno</label>
+            <br/>
+            <input type="radio" name="payment_type" id="carta" disabled /> <label for="carta">Carta di Credito</label>
+            <fieldset class="border p-2">
+                <legend class="float-none w-auto">Carte</legend>
+                <i class="fa-duotone fa-solid fa-spinner fa-spin-pulse" style="--fa-primary-opacity: 0.4; --fa-secondary-opacity: 1;"></i>
+                <label for="cards">Scegli una carta:</label>
+                <select id="cards"></select>
+            </fieldset>
+        </fieldset>
+        <p class="fs-5 text-center">Consegna presso il Campus di Cesena di UNIBO. Spedizione gratuita!</p>
+        <br/>
+        <button type="button" class="btn btn-primary fs-4" id="put_order" disabled><i class="fa-duotone fa-solid fa-spinner fa-spin-pulse" style="--fa-primary-opacity: 0.4; --fa-secondary-opacity: 1;"></i> ORDINA</button>
+    </main>
+
+    <footer>
+        <p>Unibo Ecommerce</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifica</title>
+    <script src="js/session_checker.js"></script>
+    <script src="libs/toastr_vanilla.js"></script>
+    <script src="libs/sweet_alert_2.js"></script>
+    <script src="js/js_utils.js"></script>
+    <script src="js/notify_script.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <script src="libs/font_awesome.js"></script>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.1/css/all.css" />
+    <!-- Other CSS -->
+    <link rel="stylesheet" href="libs/toastr.css" />
+    <link rel="stylesheet" href="css/glob_style.css" />
+    <link rel="stylesheet" href="css/notify.css" />
+</head>
+<body>
+    <!-- Barra di navigazione -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Unibo Store</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about_us.html">Chi siamo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contatti</a>
+                    </li>
+                    <li class="nav-item" id="accountBtn">
+                        <a class="nav-link" href="account.html">Account</a>
+                    </li>
+                    <li class="nav-item" id="loginBtn">
+                        <a class="nav-link" href="login.html">LOGIN</a>
+                    </li>
+                    <li class="nav-item" id="signupBtn">
+                        <a class="nav-link" href="signup.html">SIGNUP</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item bell">
+                        <a class="nav-link" href="notifies.html" title="Notifiche"><div class="iconsNavContainer"><i class="fa-solid fa-bell"></i><p id="notifynum"></p></div></a>
+                    </li>
+                    <li class="nav-item cart">
+                        <a class="nav-link" href="cart.html" title="Carrello"><div class="iconsNavContainer"><i class="fa-solid fa-cart-shopping"></i><p id="cartnum"></p></div></a>
+                    </li>
+                    <li class="nav-item" id="adminLoginBtn">
+                        <a class="nav-link" href="admin_login.html">LOGIN VENDITORE</a>
+                    </li>
+                    <li class="nav-item" id="logoutBtn">
+                        <a class="nav-link" href="server/logout.php">LOGOUT</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <h1>NOTIFICA</h1>
+        <h2>-</h2>
+    </header>
+
+    <main>
+        <section>
+            <p>...</p>
+        </section>
+        <footer>
+            <form action="#" method="post">
+                <button type="button" class="btn btn-info" id="setUnread"><i class="fa-regular fa-bookmark"></i> Segna Come da Leggere</button>
+                <button type="button" class="btn btn-danger" id="delNotify"><i class="fa-solid fa-trash"></i> Elimina Notifica</button>
+            </form>
+        </footer>
+    </main>
+
+    <footer>
+        <p>Unibo Ecommerce</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

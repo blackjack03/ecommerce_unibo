@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modifica Prodotto</title>
+    <script src="js/session_checker.js"></script>
+    <script src="libs/toastr_vanilla.js"></script>
+    <script src="libs/sweet_alert_2.js"></script>
+    <script src="js/js_utils.js"></script>
+    <script src="js/update_product.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <script src="libs/font_awesome.js"></script>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.1/css/all.css" />
+    <!-- Other CSS -->
+    <link rel="stylesheet" href="libs/toastr.css" />
+    <link rel="stylesheet" href="css/glob_style.css" />
+    <link rel="stylesheet" href="css/update_product.css" />
+</head>
+<body>
+    <!-- Barra di navigazione -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Unibo Store</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about_us.html">Chi siamo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contatti</a>
+                    </li>
+                    <li class="nav-item" id="accountBtn">
+                        <a class="nav-link" href="account.html">Account</a>
+                    </li>
+                    <li class="nav-item" id="loginBtn">
+                        <a class="nav-link" href="login.html">LOGIN</a>
+                    </li>
+                    <li class="nav-item" id="signupBtn">
+                        <a class="nav-link" href="signup.html">SIGNUP</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item bell">
+                        <a class="nav-link" href="notifies.html" title="Notifiche"><div class="iconsNavContainer"><i class="fa-solid fa-bell"></i><p id="notifynum"></p></div></a>
+                    </li>
+                    <li class="nav-item cart">
+                        <a class="nav-link" href="cart.html" title="Carrello"><div class="iconsNavContainer"><i class="fa-solid fa-cart-shopping"></i><p id="cartnum"></p></div></a>
+                    </li>
+                    <li class="nav-item" id="adminLoginBtn">
+                        <a class="nav-link" href="admin_login.html">LOGIN VENDITORE</a>
+                    </li>
+                    <li class="nav-item" id="logoutBtn">
+                        <a class="nav-link" href="server/logout.php">LOGOUT</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="alert alert-success alert-dismissible fade show">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <strong>Aggiornato con Successo!</strong> Le informazioni relative al prodotto sono state aggiornate correttamente!
+    </div>
+    <div class="alert alert-danger alert-dismissible fade show">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <strong>Errore!</strong> Non è stato possibile modificare le informazioni relative al prodotto!
+    </div>
+
+    <header>
+        <h1>Modifica Prodotto</h1>
+    </header>
+
+    <main>
+        <form action="server/update_product.php" method="post" enctype="multipart/form-data" class="mb-3">
+            <input type="hidden" name="prod_id" value="" />
+            <div class="mb-3">
+                <label for="name" class="form-label">Inserisci il nome del prodotto: <span class="mandatory">*</span></label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="Nome del Prodotto" required />
+            </div>
+            <div class="mb-3">
+                <label for="descr" class="form-label">Inserisci la descrizione del prodotto: <span class="mandatory">*</span></label>
+                <textarea name="descr" id="descr" class="form-control" cols="30" rows="10" placeholder="Descrizione..." required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Inserisci il prezzo: <span class="mandatory">*</span></label>
+                <input type="number" name="price" id="price" class="form-control" min="0" step="0.01" placeholder="€" required />
+            </div>
+            <div class="mb-3">
+                <label for="qta" class="form-label">Quantità disponibile: <span class="mandatory">*</span></label>
+                <input type="number" name="qta" id="qta" class="form-control" min="0" step="1" placeholder="100" required />
+            </div>
+            <div class="form-check mb-3">
+                <input type="checkbox" name="also_image" id="also_image" class="form-check-input" />
+                <label for="also_image" class="form-check-label">Modifica Anche le Immagini</label>
+            </div>
+            <fieldset class="border p-3 mb-3">
+                <legend class="float-none w-auto">Foto</legend>
+                <h3 class="mb-3">Inserisci da 1 a 6 foto</h3>
+                <div class="mb-3">
+                    <label for="ph1" class="form-label">Inserisci la prima foto: <span class="mandatory">*</span></label>
+                    <input type="file" name="ph1" id="ph1" class="form-control" accept="image/*" />
+                </div>
+                <div class="mb-3">
+                    <label for="ph2" class="form-label">Inserisci la seconda foto:</label>
+                    <input type="file" name="ph2" id="ph2" class="form-control" accept="image/*" />
+                </div>
+                <div class="mb-3">
+                    <label for="ph3" class="form-label">Inserisci la terza foto:</label>
+                    <input type="file" name="ph3" id="ph3" class="form-control" accept="image/*" />
+                </div>
+                <div class="mb-3">
+                    <label for="ph4" class="form-label">Inserisci la quarta foto:</label>
+                    <input type="file" name="ph4" id="ph4" class="form-control" accept="image/*" />
+                </div>
+                <div class="mb-3">
+                    <label for="ph5" class="form-label">Inserisci la quinta foto:</label>
+                    <input type="file" name="ph5" id="ph5" class="form-control" accept="image/*" />
+                </div>
+                <div class="mb-3">
+                    <label for="ph6" class="form-label">Inserisci la sesta foto:</label>
+                    <input type="file" name="ph6" id="ph6" class="form-control" accept="image/*" />
+                </div>
+            </fieldset>
+            <button type="submit" class="btn btn-primary" disabled>AGGIORNA PRODOTTO</button>
+        </form>
+        <footer>
+            <fieldset class="border p-2 border-danger">
+                <legend class="float-none w-auto">Danger Zone</legend>
+                <button class="btn btn-danger">Elimina Prodotto</button>
+            </fieldset>
+        </footer>
+    </main>
+
+    <footer>
+        <p>Unibo Ecommerce</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

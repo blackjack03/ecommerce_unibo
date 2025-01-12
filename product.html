@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prodotto</title>
+    <script src="js/session_checker.js"></script>
+    <script src="libs/sweet_alert_2.js"></script>
+    <script src="libs/toastr_vanilla.js"></script>
+    <script src="js/js_utils.js"></script>
+    <script src="js/product_view.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <script src="libs/font_awesome.js"></script>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.1/css/all.css" />
+    <!-- Other CSS -->
+    <link rel="stylesheet" href="css/glob_style.css" />
+    <link rel="stylesheet" href="libs/toastr.css" />
+    <link rel="stylesheet" href="css/product_view.css" />
+</head>
+<body>
+    <!-- Barra di navigazione -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Unibo Store</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about_us.html">Chi siamo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contatti</a>
+                    </li>
+                    <li class="nav-item" id="accountBtn">
+                        <a class="nav-link" href="account.html">Account</a>
+                    </li>
+                    <li class="nav-item" id="loginBtn">
+                        <a class="nav-link" href="login.html">LOGIN</a>
+                    </li>
+                    <li class="nav-item" id="signupBtn">
+                        <a class="nav-link" href="signup.html">SIGNUP</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item bell">
+                        <a class="nav-link" href="notifies.html" title="Notifiche"><div class="iconsNavContainer"><i class="fa-solid fa-bell"></i><p id="notifynum"></p></div></a>
+                    </li>
+                    <li class="nav-item cart">
+                        <a class="nav-link" href="cart.html" title="Carrello"><div class="iconsNavContainer"><i class="fa-solid fa-cart-shopping"></i><p id="cartnum"></p></div></a>
+                    </li>
+                    <li class="nav-item" id="adminLoginBtn">
+                        <a class="nav-link" href="admin_login.html">LOGIN VENDITORE</a>
+                    </li>
+                    <li class="nav-item" id="logoutBtn">
+                        <a class="nav-link" href="server/logout.php">LOGOUT</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="alert alert-success alert-dismissible fade show">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <strong>Prodotto Aggiunto con Successo!</strong> Hai aggiunto questo prodoto con successo!
+    </div>
+
+    <main>
+        <header>
+            <h1 id="prodName">-</h1>
+            <div id="carousel" class="carousel slide">
+                <div class="carousel-indicators" id="slideIndicators">
+                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                </div>
+                <div class="carousel-inner" id="slideImageContainer">
+                    <div class="carousel-item active" id="slideFirstImageContainer">
+                        <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Loading..." preserveAspectRatio="xMidYMid slice" focusable="false"><title>Loading...</title><rect width="100%" height="100%" fill="#777"></rect><text x="30%" y="50%" fill="#555" font-size="2.5em" dy=".3em">Loading...</text></svg>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </header>
+        <section>
+            <section class="rate"></section>
+            <h2>ORDINA</h2>
+            <p class="price fs-4">Prezzo:<br/><span id="price"></span></p>
+            <form action="#" method="post" id="cart_adder_form">
+                <label for="quantity" class="fs-5">Quantità:</label>
+                <br/>
+                <input type="number" id="quantity" value="1" min="1" required />
+                <br/>
+                <button type="submit" class="btn btn-success" id="addToCart"><i class="fa-solid fa-cart-circle-plus"></i> AGGIUNGI AL CARRELLO</button>
+            </form>
+            <p id="warn1" class="fs-4 text-danger"></p>
+            <p id="warn2" class="fs-4 text-danger fw-bold">ESAURITO!</p>
+            <p class="fs-5" id="desc">...</p>
+        </section>
+        <footer>
+            <h3 class="text-center">RECENSIONI</h3>
+            <button class="btn btn-warning">Visualizza Recensioni</button>
+            <section>
+                <button class="btn btn-info">Aggiungi una Recensione</button>
+                <p class="fs-4">Il prodotto non ha ancora recensioni!</p>
+            </section>
+        </footer>
+    </main>
+
+    <aside>
+        <section>
+            <button>X</button>
+            <h2>Aggiungi Recensione</h2>
+            <section class="rate">
+                <i class="fa-regular fa-star" data-rank="1"></i>
+                <i class="fa-regular fa-star" data-rank="2"></i>
+                <i class="fa-regular fa-star" data-rank="3"></i>
+                <i class="fa-regular fa-star" data-rank="4"></i>
+                <i class="fa-regular fa-star" data-rank="5"></i>
+            </section>
+            <form action="#" method="post" class="mb-3">
+                <div class="mb-3">
+                    <label for="rev_title" class="form-label">Titolo Recensione:</label>
+                    <input type="text" id="rev_title" name="rev_title" class="form-control" placeholder="Titolo" required />
+                </div>
+                <div class="mb-3">
+                    <label for="rev_text" class="form-label">Testo Recensione:</label>
+                    <textarea id="rev_text" name="rev_text" class="form-control" cols="5" rows="5" placeholder="Testo" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Invia Recensione</button>
+            </form>            
+        </section>
+    </aside>
+
+    <footer>
+        <p>Unibo Ecommerce</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
