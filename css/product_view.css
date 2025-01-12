@@ -1,0 +1,244 @@
+body > header {
+    margin-bottom: 0.5em;
+}
+
+body > main > header {
+    width: 45vw;
+    margin: 0 auto;
+    padding: 0 0.4em;
+    grid-area: a;
+}
+
+.carousel.slide {
+    height: 100%;
+}
+
+#carousel {
+    height: auto;
+    margin: 0 auto;
+    background-color: rgb(240, 240, 240);
+    margin-top: 0.5em;
+}
+
+/*.carousel-indicators {
+    background-color: rgb(240, 240, 240);
+}*/
+
+main h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0.2em;
+}
+
+.carousel-inner img {
+    height: auto;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: rgb(177, 174, 174);
+}
+
+#warn1, #warn2 {
+    display: none;
+}
+
+svg.bd-placeholder-img {
+    width: 100%;
+    height: 25em;
+}
+
+body > main > footer > section {
+    display: none;
+}
+
+body > aside {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 9;
+}
+
+body > aside > section {
+    position: absolute;
+    width: 90vw;
+    height: 25em;
+    max-width: 35em;
+    background-color: white;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+}
+
+body > aside > section > button {
+    position: absolute;
+    left: calc(100% - 1.1em);
+    top: -1.1em;
+    width: 2.2em;
+    height: 2.2em;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    border: 1px solid black;
+    font-weight: bold;
+}
+
+body > main > footer > section > p {
+    display: none;
+}
+
+body > main {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-auto-rows: max-content;
+    grid-template-areas: "a b"
+                         "c c";
+    justify-items: stretch;
+    align-items: stretch;
+    margin-top: 1em;
+    height: auto;
+    /*height: max(calc(100vh - 5em));
+    min-height: auto;
+    overflow-y: auto;*/
+}
+
+body > main > section {
+    grid-area: b;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+section.rate i.fa-solid.fa-star {
+    color: rgb(255, 196, 0);
+}
+
+body > main > section > section.rate span {
+    display: inline-block;
+    margin-left: 0.35em;
+    font-weight: bold;
+}
+
+body > main > section p {
+    margin: 0;
+}
+
+body > main > section p.price {
+    font-weight: bold;
+}
+
+body > main > footer {
+    grid-area: c;
+    margin-top: 0.5em;
+    border-top: 1px solid black;
+    padding: 0.5em;
+    /*width: 90vw;*/
+}
+
+body > main > footer > section > article {
+    width: 90vw;
+    max-width: 20em;
+    height: auto;
+    background-color: rgb(233, 255, 254);
+    box-shadow: 0 0 6px rgb(233, 255, 254);
+    border-radius: 8px;
+    padding: 0.5em;
+    margin: 0.5em;
+}
+
+body > main > footer > section > article p {
+    margin-bottom: 0.3em;
+    font-size: 13pt;
+}
+
+.alert.alert-success {
+    display: none;
+    width: 90vw;
+    margin: 1em auto 0;
+}
+
+#addToCart {
+    margin-top: 0.25em;
+}
+
+body > main > footer > section > button,
+body > main > footer > section > p {
+    margin-left: 0.5em;
+}
+
+body > aside h2 {
+    text-align: center;
+    margin-top: 0.2em;
+}
+
+body > aside form {
+    padding: 0 1em;
+}
+
+body > aside section.rate {
+    margin-left: 1em;
+    width: 7em;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#desc {
+    margin-top: 0.3em;
+}
+
+input#quantity {
+    width: 8em;
+    outline: none;
+    border: 1px solid gray;
+    padding: 0.3em 0.5em;
+    transition: 0.2s;
+}
+
+input#quantity:hover,
+input#quantity:focus {
+    box-shadow: 0 0 3px black;
+}
+
+input#quantity:focus {
+    border-color: black;
+}
+
+
+@media (orientation: portrait) {
+
+    body > main > header {
+        width: 90vw;
+    }
+
+    main > header, .carousel-inner img, svg.bd-placeholder-img {
+        height: auto;
+    }
+
+    #carousel {
+        width: 95%;
+    }
+
+    body > main {
+        grid-template-columns: 100%;
+        grid-auto-rows: max-content;
+        grid-template-areas: "a"
+                             "b"
+                             "c";
+        justify-items: stretch;
+        align-items: stretch;
+    }
+
+    body > main > section {
+        padding-top: 1em;
+    }
+
+}

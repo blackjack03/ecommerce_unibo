@@ -1,0 +1,12 @@
+body > header h1 {
+    text-align: center;
+    margin-top: 0.5em;
+}
+
+body > main {
+    margin: 0 4em;
+}
+
+#hd {
+    display: none;
+}

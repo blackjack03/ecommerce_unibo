@@ -1,0 +1,23 @@
+body > header h1 {
+    text-align: center;
+    margin-top: 0.2em;
+}
+
+body > main {
+    margin: 0 4em;
+}
+
+div.alert.alert-success,
+div.alert.alert-danger {
+    margin: 0.5em auto 0;
+    width: 70vw;
+    display: none;
+}
+
+#hd {
+    display: none;
+}
+
+#successSignUp {
+    display: none;
+}

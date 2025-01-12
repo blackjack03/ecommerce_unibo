@@ -1,0 +1,115 @@
+body > header h1 {
+    text-align: center;
+    margin-top: 0.2em;
+}
+
+table {
+    width: 90vw;
+    border-collapse: collapse;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+thead th {
+    background-color: #f2f2f2;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid black;
+}
+
+tbody td, tfoot td {
+    padding: 10px;
+    border: 1px solid black;
+    vertical-align: middle;
+}
+
+tfoot {
+    display: none;
+    border-top: 2px solid black;
+}
+
+tfoot td {
+    font-weight: bold;
+}
+
+tbody img {
+    max-width: 50px;
+    height: auto;
+}
+
+#emptyrow {
+    display: none;
+}
+
+.tdImage, .tdDelete {
+    text-align: center;
+}
+
+body > main > table input[type="number"] {
+    border: 1px solid rgb(78, 78, 78);
+    outline: none;
+    transition: 0.15s;
+}
+
+body > main > table input[type="number"]:hover {
+    box-shadow: 0 0 2px rgb(78, 78, 78);
+}
+
+body > main > table input[type="number"]:focus {
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 0 0 2px rgb(78, 78, 78);
+}
+
+#emptyrow td {
+    border: none;
+    color: red;
+}
+
+label {
+    user-select: none;
+}
+
+body > main > fieldset {
+    width: 90vw;
+    margin: 0 auto;
+    margin-bottom: 0.3em;
+}
+
+body > main > fieldset > fieldset {
+    width: 50%;
+    display: none;
+}
+
+body > main > fieldset > fieldset label[for="cards"], #cards {
+    display: none;
+}
+
+#cards {
+    margin-top: 0.4em;
+}
+
+#put_order {
+    display: block;
+    margin: 0 auto;
+}
+
+#put_order i {
+    display: none;
+}
+
+/*.tdName {
+    border-left: none;
+    text-align: center;
+    vertical-align: middle;
+}*/
+
+body {
+    height: 100vh;
+}
+
+
+@media (orientation: portrait) {
+    td.tdImage {
+        display: none;
+    }
+}

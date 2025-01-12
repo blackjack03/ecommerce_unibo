@@ -1,0 +1,310 @@
+body .generalInfo h2 {
+    margin-top: 0.5em;
+}
+
+table {
+    width: 90vw;
+    border-collapse: collapse;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+thead th {
+    background-color: #f2f2f2;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid black;
+}
+
+tbody td, tfoot td {
+    padding: 10px;
+    border: 1px solid black;
+    vertical-align: middle;
+}
+
+tfoot {
+    border-top: 2px solid black;
+}
+
+tfoot td {
+    font-weight: bold;
+}
+
+tbody img {
+    max-width: 50px;
+    height: auto;
+}
+
+#emptyrow {
+    display: none;
+}
+
+.tdImage, .tdDelete {
+    text-align: center;
+}
+
+section.tracking {
+    width: 90vw;
+    height: 7em;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 80% 20%;
+    grid-template-columns: 100%;
+    justify-items: stretch;
+    align-items: center;
+    background-color: rgb(252, 254, 238);
+    padding: 0.5em;
+}
+
+section.tracking section.icons {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: repeat(9, calc(100% / 9));
+    justify-items: stretch;
+    align-items: center;
+}
+
+section.tracking section.status {
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: repeat(9, calc(100% / 9));
+    grid-template-areas: "a . b . c . d . e";
+    justify-content: stretch;
+    align-items: stretch;
+    justify-self: stretch;
+    align-self: stretch;
+}
+
+section.tracking section.status p {
+    text-align: center;
+    cursor: default;
+}
+
+section.tracking section.status p:nth-child(1) {
+    grid-area: a;
+}
+section.tracking section.status p:nth-child(2) {
+    grid-area: b;
+}
+section.tracking section.status p:nth-child(3) {
+    grid-area: c;
+}
+section.tracking section.status p:nth-child(4) {
+    grid-area: d;
+}
+section.tracking section.status p:nth-child(5) {
+    grid-area: e;
+}
+
+section.tracking p {
+    margin: 0;
+}
+
+section.tracking article {
+    align-self: stretch;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.tracking article div.icon_container {
+    aspect-ratio: 1/1;
+    width: 2.4em;
+    height: 2.4em;
+    background-color: rgb(206, 206, 206);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid gray;
+    font-size: 2.25em;
+    color: rgb(92, 92, 92);
+}
+
+section.tracking article div.icon_container.active {
+    background-color: aquamarine;
+    border: 3px solid green;
+    text-shadow: 0 0 3px white;
+    color: black;
+}
+
+section.tracking section.status p.active {
+    font-weight: bold;
+}
+
+section.tracking div.generic_bar {
+    background-color: gray;
+    height: 0.5em;
+}
+
+section.tracking div.generic_bar.next {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(127,255,212,1) 0%, rgba(128,128,128,1) 37.5%);
+}
+
+section.tracking div.generic_bar.active {
+    background-color: rgb(0, 193, 0);
+}
+
+body > footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin-top: 0 !important;
+}
+
+body > main {
+    height: calc(100vh - 4em - 3.5em);
+    overflow-y: auto;
+    padding-bottom: 0.5em;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 25%;
+    grid-template-areas: "a"
+                         "b"
+                         "c";
+    justify-items: center;
+    align-items: center;
+}
+
+body > main.admin {
+    grid-template-rows: 25% 20% 25%;
+    grid-template-areas: "a"
+                         "b"
+                         "c"
+                         "d";
+}
+
+section.generalInfo {
+    text-align: center;
+    margin: 0 3em;
+    grid-area: a;
+}
+
+section.generalInfo.admin {
+    grid-area: b;
+}
+
+section.tracking {
+    grid-area: b;
+}
+
+section.tracking.admin {
+    grid-area: c;
+}
+
+section.details {
+    grid-area: c;
+}
+
+section.details.admin {
+    grid-area: d;
+}
+
+fieldset.adminPanel {
+    grid-area: a;
+}
+
+body > main table a, body > main table a:visited {
+    color: blue;
+}
+
+body > main table a:active {
+    color: red;
+}
+
+span.underline {
+    text-decoration: underline 2px solid black;
+}
+
+
+@media (orientation: portrait) {
+
+    body > main {
+        grid-template-rows: 25%;
+    }
+
+    body > main.admin {
+        grid-template-rows: 25% 25%;
+    }
+
+    section.details {
+        grid-area: b;
+    }
+
+    section.details.admin {
+        grid-area: c;
+    }
+
+    td.tdImage {
+        display: none;
+    }
+
+    section.tracking {
+        height: 95vh;
+        grid-template-columns: 60% 40%;
+        grid-template-rows: 100%;
+        grid-area: c;
+        margin-top: 0.5em;
+        margin-bottom: 1em;
+    }
+
+    section.tracking.admin {
+        grid-area: d;
+    }
+
+    section.tracking section.icons {
+        grid-template-rows: repeat(9, calc(100% / 9));
+        grid-template-columns: 100%;
+        justify-items: stretch;
+        align-items: center;
+    }
+
+    section.tracking div.generic_bar {
+        width: 0.5em;
+        justify-self: center;
+        align-self: center;
+        height: 100%;
+    }
+
+    section.tracking section.status {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(9, calc(100% / 9));
+        grid-template-areas: "a"
+                             "."
+                             "b"
+                             "."
+                             "c"
+                             "."
+                             "d"
+                             "."
+                             "e";
+    }
+
+    section.tracking article div.icon_container {
+        aspect-ratio: 1/1;
+        width: 1.8em;
+        height: 1.8em;
+    }
+
+    section.tracking article div.icon_container i {
+        font-size: 0.7em;
+    }
+
+    section.tracking section.status p {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        text-align: left;
+    }
+
+    section.tracking div.generic_bar.next {
+        background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(127,255,212,1) 0%, rgba(128,128,128,1) 37.5%);
+    }
+
+    section.tracking {
+        margin-bottom: 4em;
+    }
+
+}

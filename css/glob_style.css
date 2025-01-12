@@ -1,0 +1,76 @@
+#loginBtn, #adminLoginBtn, #logoutBtn, #accountBtn, #signupBtn {
+    display: none;
+    font-weight: bold;
+}
+
+body > header > nav {
+    box-shadow: 0 0 4px gray;
+}
+
+body > nav a {
+    color: white !important;
+}
+
+body > header > nav a {
+    color: white !important;
+}
+
+.cart, .bell {
+    /*position: relative;*/
+    margin-right: 0.5em;
+}
+
+#cartnum, #notifynum {
+    margin: 0 !important;
+    position: absolute;
+    width: 1.5em;
+    height: 1.5em;
+    background: red;
+    border-radius: 50%;
+    top: -20%;
+    display: none; /* flex */
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    color: white;
+    user-select: none;
+    cursor: pointer;
+}
+
+#cartnum {
+    left: 68%;
+}
+
+#notifynum {
+    left: 60%;
+}
+
+.nav-item.cart {
+    display: none;
+}
+
+.iconsNavContainer {
+    position: relative;
+    height: auto;
+    width: 1.15em;
+}
+
+body > footer {
+    width: 100%;
+    height: 4em;
+    background-color: rgb(45, 45, 45);
+    margin-top: 2.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+}
+
+body > footer p {
+    margin: 0;
+}
+
+.font-swal {
+    font-family: Arial, Helvetica, sans-serif;
+}

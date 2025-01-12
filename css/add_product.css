@@ -1,0 +1,50 @@
+body > header > h1 {
+    text-align: center;
+}
+
+body > main {
+    width: 90vw;
+    max-width: 80em;
+    margin: 0 auto;
+    margin-top: 1em;
+    border: 2px solid rgb(158, 225, 252);
+    box-shadow: 0 0 0.5em rgb(158, 225, 252);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 0.8em;
+    padding-left: 1em;
+    background-color: rgb(232, 247, 253);
+}
+
+body > main fieldset {
+    width: 150%;
+}
+
+body > main fieldset input[type="file"] {
+    width: 50%;
+}
+
+form label {
+    user-select: none;
+}
+
+.alert.alert-danger {
+    display: none;
+    width: 90vw;
+    margin: 0 auto;
+    margin-top: 1em;
+}
+
+
+@media (orientation: portrait) {
+
+    body > main fieldset {
+        width: 100%;
+    }
+
+    body > main fieldset input[type="file"] {
+        width: initial;
+    }
+
+}

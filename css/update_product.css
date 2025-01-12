@@ -1,0 +1,29 @@
+body > main > form > fieldset {
+    display: none;
+}
+
+body > header h1 {
+    text-align: center;
+}
+
+body > main > form hr {
+    border: none;
+    border-top: 2px solid #000;
+    margin: 1.2em auto;
+    width: 70%;
+}
+
+body > main > form, body > main > footer {
+    margin: 0 2em;
+}
+
+div.alert {
+    display: none;
+    width: 90vw;
+    margin: 0 auto;
+    margin-top: 0.5em;
+}
+
+body > main > footer > fieldset legend {
+    color: red;
+}

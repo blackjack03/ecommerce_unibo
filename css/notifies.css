@@ -1,0 +1,97 @@
+body {
+    height: 100vh;
+}
+
+body > header {
+    width: 100vw;
+}
+
+body > header h1 {
+    text-align: center;
+    margin-top: 0.5em;
+}
+
+body > main {
+    width: 90vw;
+    max-width: 40em;
+    height: 65vh;
+    margin: 0 auto;
+    margin-top: 1em;
+    background-color: rgb(252, 254, 154);
+    box-shadow: 0 0 12px rgb(252, 254, 154);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body > main > header > h1 {
+    text-align: center;
+}
+
+body > main > section {
+    width: 80%;
+    height: 92%;
+    margin: 0 auto;
+    overflow-y: auto;
+    background-color: white;
+    padding: 0.4em;
+}
+
+body > main > section > article {
+    width: 85%;
+    height: 2.5em;
+    background-color: rgb(131, 247, 249);
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 100%;
+    margin: 0 auto;
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgb(131, 247, 249);
+    transition: 0.2s;
+}
+
+body > main > section > article:hover {
+    box-shadow: 0 0 6px rgb(131, 247, 249);
+}
+
+body > main > section > article:active {
+    box-shadow: 0 0 3px rgb(131, 247, 249);
+}
+
+body > main > section > article p {
+    margin: 0;
+}
+
+body > main > section > article p:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+body > main > section > article p:first-child {
+    border-right: 1px solid black;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 0.2em;
+}
+
+body > main > section > article p.unread {
+    font-weight: bold;
+}
+
+
+@media (orientation: portrait) {
+
+    body > main > section > article {
+        grid-template-columns: 50% 50%;
+    }
+
+}

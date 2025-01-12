@@ -1,0 +1,15 @@
+body > main > section {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+body > main > section button {
+    margin: 0.7em 0;
+}
+
+body > header h1,
+body > header h2 {
+    text-align: center;
+}

@@ -1,0 +1,194 @@
+body > header h1 {
+    text-align: center;
+    margin-top: 0.1em;
+}
+
+body > header p {
+    text-align: center;
+    margin: 0 1em;
+}
+
+body > main {
+    width: 95vw;
+    height: auto;
+    background-color: rgb(228, 226, 226);
+    margin: 0 auto;
+    overflow-y: auto;
+    position: relative;
+    margin-top: 1.5em;
+}
+
+body > main h2 {
+    text-align: center;
+    margin-bottom: 0.4em;
+    color: white;
+    text-shadow: 0 0 1px white;
+}
+
+#products {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#products article {
+    position: relative;
+    background: whitesmoke;
+    width: 20.5em;
+    height: 21.25em;
+    margin-bottom: 10pt;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50% 50%;
+    justify-items: stretch;
+    align-items: stretch;
+    box-shadow: 0px 0px 2px rgb(87, 87, 87);
+    transition: 0.2s;
+}
+
+#products article:hover {
+    box-shadow: 0px 0px 6px rgb(87, 87, 87);
+}
+
+#products article:active {
+    box-shadow: 0px 0px 3px rgb(87, 87, 87);
+}
+
+#products article img {
+    width: 90%;
+    height: 90%;
+}
+
+#products article header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#products article header img {
+    box-shadow: 0px 0px 4px black;
+}
+
+#products article main {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+#products article main i.fa-solid.fa-star {
+    color: rgb(255, 196, 0);
+}
+
+#products article main h3, #products article main p {
+    margin: 0;
+    text-align: center;
+}
+
+#products article main p.prod_desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    width: 98%;
+    height: 35pt;
+}
+
+#products article main p.price {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#products article.loading {
+    cursor: default !important;
+}
+
+#products article.loading::after {
+    content: "";
+    width: calc(100% - 60px);
+    height: calc(100% - 60px);
+    top: 30px;
+    left: 30px;
+    position: absolute;
+    background-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5) 50%, transparent 100%),
+                      linear-gradient(#DDD 148px, transparent 0),
+                      linear-gradient(#DDD 32px, transparent 0),
+                      linear-gradient(#DDD 64px, transparent 0);
+    background-repeat: no-repeat;
+    background-size: 100px 340px, 100% 148px, 100% 32px, 100% 64px;
+    background-position: 0 0, 0 0, 0px 170px, 0px 220px;
+    animation: animloader 1s linear infinite;
+}
+
+div.formContainer {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    margin-top: 0.2em;
+}
+
+#pageChanger {
+    width: 30%;
+    min-width: 16.5em;
+    height: auto;
+    background-color: rgb(186, 186, 186);
+    box-shadow: 0px -3px 6px 2px rgba(35, 35, 35, 0.6);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#pageNum {
+    text-align: center;
+}
+
+body > footer {
+    width: 100%;
+    height: 4em;
+    background-color: rgb(45, 45, 45);
+    margin-top: 2.5em;
+}
+
+.out_of_stock {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20pt;
+    color: red;
+    background-color: white;
+    padding: 6px;
+    margin: 0;
+    letter-spacing: 1.1px;
+    border: 2px solid red;
+    box-shadow: 0px 0px 10px red;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    user-select: none;
+}
+
+/* Remove defualt input number arrows style */
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] { /* for Firefox */
+    -moz-appearance: textfield;
+}
+
+
+@keyframes animloader {
+    0% {
+        background-position: 0 0, 0 0, 0px 170px, 0px 220px;
+    }
+    100% {
+        background-position: 300% 0, 0 0, 0px 170px, 0px 220px;
+    }
+}

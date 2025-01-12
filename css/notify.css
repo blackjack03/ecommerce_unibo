@@ -1,0 +1,33 @@
+body > header {
+    margin-top: 0.2em;
+}
+
+body > header h1, body > header h2 {
+    text-align: center;
+}
+
+body > main > section {
+    background-color: rgb(255, 255, 237);
+    padding: 1em;
+    margin: 0 auto;
+    width: 90vw;
+    max-width: 50em;
+    border-radius: 12px;
+}
+
+body > main > footer {
+    margin: 1em 3em 0;
+}
+
+body > main > footer > form {
+    text-align: center;
+}
+
+body > main > section a,
+body > main > section a:visited {
+    color: blue;
+}
+
+body > main > section a:active {
+    color: red;
+}
